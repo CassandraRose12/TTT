@@ -6,14 +6,20 @@
     line-height: 75px;
     font-size: 50px;
     cursor: pointer;
+    border-radius: 15px 50px;
 }
 #gameContainer{
     font-family: "Permanent Marker", cursive;
     text-align: center;
+
 }
-#cellConatiner{
+#cellContainer{
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 225px;
     margin: auto;
+    border-radius: 15px 50px;
+}
+body {
+    background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/8c/39/99/metlife-stadium.jpg?w=1000&h=-1&s=1');   
 }
