@@ -11,3 +11,7 @@ First player is the Giants and second player is the Patriots.
 First player clicks a box(shaped like a football) and then it is automated to tell you when it is the second players turn. 
 
 If you get all three of your helmets in either a row or diagnal, YOU WIN!. 
+
+If no one wins its a draw. 
+
+Have Fun!
