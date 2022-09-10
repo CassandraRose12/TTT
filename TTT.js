@@ -4,6 +4,7 @@
 const canvas = document.getElementById("board");
 const ctx = canvas.getContext("2D");
 
+
 const GiantsObjects = document.createElement("img");
 GiantsObjects.src = "assets/GiantsHelmet.png";
 const GiantsArray = new Array(5);
@@ -22,7 +23,7 @@ Patriots.src= "assets/PatriotsHelmet.png"
 PatriotsArray[i]=Patriots}
 
 const helmets = document.querySelectorAll(".helmet");
-const statusText = document.getElementById("statusText");
+const alert = document.getElementById("alert");
 const restartBtn = document.querySelector("#restartBtn");
 const winCombinations = [
     [0, 1, 2],
@@ -39,14 +40,18 @@ let GiantsIndex = 0;
 let PatriotsIndex = 0;
 let currentPlayer = GiantsArray[GiantsIndex];
 let running = false;
+var mysound;
+var myMusic;
 
 initGame();
 
 function initGame(){
     helmets.forEach(helmet => helmet.addEventListener("click", helmetClicked));
     restartBtn.addEventListener("click", restartGame);
-    //statusText.textContent = `${currentPlayer}'s turn`;
     running = true;
+    mysound =
+    myMusic = new sound ("nfl_theme.mp3");
+    myMusic.play();
 }
 function helmetClicked(){
     const cellIndex = this.getAttribute("cellIndex");
@@ -66,15 +71,13 @@ function changePlayer(){
     console.log(currentPlayer, GiantsArray[GiantsIndex]);
     if (currentPlayer == GiantsArray[GiantsIndex]){
         currentPlayer = PatriotsArray[PatriotsIndex]
-        statusText.textContent = `Patriots Turn!`
+        alert.textContent = `Patriots Turn!`
         GiantsIndex ++}
     else{
         currentPlayer = GiantsArray[GiantsIndex]
-        statusText.textContent = `Giants Turn!`
+        alert.textContent = `Giants Turn!`
         PatriotsIndex++
     }
-    console.log(PatriotsIndex, GiantsIndex, currentPlayer);
-    //statusText.textContent = `${currentPlayer}'s turn`;
 }
 function checkWinner(){
     let roundWon = false;
@@ -95,11 +98,11 @@ function checkWinner(){
     }
 
     if(roundWon){
-        //statusText.textContent = `${currentPlayer} wins!`;
+        alert.textContent =  `{currentPlayer} Wins!`;
         running = false;
     }
     else if(!options.includes("")){
-        statusText.textContent = `Draw!`;
+        alert.textContent = `Draw!`;
         running = false;
     }
     else{
@@ -109,7 +112,6 @@ function checkWinner(){
 function restartGame(){
     currentPlayer = Giants;
     options = ["", "", "", "", "", "", "", "", ""];
-    //statusText.textContent = `${currentPlayer}'s turn`;
     helmets.forEach(helmet => helmet.textContent = "");
     running = true;
 }
