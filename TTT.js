@@ -1,5 +1,4 @@
-//Sources: https://www.codebrainer.com/blog/tic-tac-toe-javascript-game
-//
+
 
 const canvas = document.getElementById("board");
 const ctx = canvas.getContext("2D");
@@ -40,8 +39,6 @@ let GiantsIndex = 0;
 let PatriotsIndex = 0;
 let currentPlayer = GiantsArray[GiantsIndex];
 let running = false;
-var mysound;
-var myMusic;
 
 initGame();
 
@@ -49,9 +46,6 @@ function initGame(){
     helmets.forEach(helmet => helmet.addEventListener("click", helmetClicked));
     restartBtn.addEventListener("click", restartGame);
     running = true;
-    mysound =
-    myMusic = new sound ("nfl_theme.mp3");
-    myMusic.play();
 }
 function helmetClicked(){
     const cellIndex = this.getAttribute("cellIndex");

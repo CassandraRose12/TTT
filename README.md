@@ -15,3 +15,17 @@ If you get all three of your helmets in either a row or diagnal, YOU WIN!.
 If no one wins its a draw. 
 
 Have Fun!
+
+Sources: https://www.w3schools.com/
+
+https://www.codebrainer.com/blog/tic-tac-toe-javascript-game
+
+https://www.youtube.com/channel/UC4SVo0Ue36XCfOyb5Lh1viQ
+
+https://www.youtube.com/watch?v=qCBiKJbLcFI
+
+Sound Sources: 
+
+https://www.zedge.net/ringtone/5106d2af-0e36-36ad-a80c-a0a6b1bc6a5c
+
+https://www.tutorialspoint.com/How-to-add-background-music-to-your-web-page#:~:text=To%20add%20background%20music%20on,background%20whenever%20the%20page%20loads.
