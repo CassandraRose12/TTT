@@ -7,6 +7,18 @@
     font-size: 50px;
     cursor: pointer;
     border-radius: 15px 50px;
+    
+}
+#cellContainer{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+    margin: 200px;
+    border-radius: 15px 50px;
+    position: absolute;
+    left: 185px;
+    color: brown;
+    text-align: center;
 }
 /* #gameContainer{
     font-family: "Permanent Marker", cursive;
@@ -52,4 +64,4 @@ h2{
     position: absolute;
     left: 450px;
     margin-top: 45px;
-} */ */
+} */ 
