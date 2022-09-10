@@ -8,7 +8,7 @@
     cursor: pointer;
     border-radius: 15px 50px;
 }
-#gameContainer{
+/* #gameContainer{
     font-family: "Permanent Marker", cursive;
     text-align: center;
 
@@ -23,6 +23,12 @@
     left: 185px;
 }
 body {
+    overflow: hidden;
+    width: 700px;
+    height: 500px;
+    animation-fill-mode: forwards;
+    position: relative;
+    z-index: -1;
     background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/8c/39/99/metlife-stadium.jpg?w=1000&h=-1&s=1');   
 }
 #restartBtn{
@@ -34,11 +40,10 @@ body {
     
 }
 h1{
-    padding: 3px;
-    text-align: center;
-    position: absolute;
-    left: 430px;
-    margin-top: auto;
+    margin: 0px;
+    margin-bottom: 15px;
+   font-size: 2.5em;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h2{
@@ -47,4 +52,4 @@ h2{
     position: absolute;
     left: 450px;
     margin-top: 45px;
-}
+} */ */

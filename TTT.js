@@ -1,4 +1,6 @@
-const music = new Audio('adf.wav')
+const canvas = document.getElementById("board");
+const ctx = canvas.getContext("2D");
+const tac = document.getElementById("cellContainer");
 const cells = document.querySelectorAll(".cell");
 const statusText = document.querySelector("#statusText");
 const restartBtn = document.querySelector("#restartBtn");

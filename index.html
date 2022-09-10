@@ -5,10 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TTT</title>
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="style.css">
+    <style>
+        canvas{
+            box-shadow: lightgrey 20px 10px 50px;
+            width: 800px;
+            height: 500px;
+        }
+        h1 {
+            margin: 0px;
+            margin-bottom: 15px;
+            font-size: 2.5em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+         }
+            
+    </style> 
 </head>
 <body>
-    <h1 class="select-character">Game Time!</h1>
+    <h1>Game Time!</h1>
         <div id="cellContainer">
             <div cellIndex="0" class="cell"></div>
             <div cellIndex="1" class="cell"></div>
@@ -21,8 +43,8 @@
             <div cellIndex="8" class="cell"></div>
         </div> 
         <h2 id="statusText"></h2>
+        <canvas id="board"></canvas>
         <button id="restartBtn"> Play Again</button>
-    
-    <script src="TTT.js"></script>
+        <script type="module" src="TTT.js"></script> 
 </body>
 </html>
