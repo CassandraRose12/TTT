@@ -19,7 +19,7 @@ const winConditions = [
     [2, 4, 6]
 ];
 let options = ["", "", "", "", "", "", "", "", ""];
-let currentPlayer = ("cell");
+let currentPlayer = Giants;
 let running = false;
 
 initializeGame();
