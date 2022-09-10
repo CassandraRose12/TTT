@@ -8,6 +8,6 @@ Each person (2 people) are assigned either an "X" or an "O", in this game I have
 
 First player is the Giants and second player is the Patriots. 
 
-First player clicks a box(shaped like a football helmet) and then it is automated to tell you when it is the second players turn. 
+First player clicks a box(shaped like a football) and then it is automated to tell you when it is the second players turn. 
 
 If you get all three of your helmets in either a row or diagnal, YOU WIN!. 
