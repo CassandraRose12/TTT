@@ -1,16 +1,15 @@
-.cell{
-    width: 75px;
-    height: 75px;
+.helmet{
+    width: 80px;
+    height: 80px;
     border: 2px solid;
     box-shadow: 0 0 0 2px;
     line-height: 75px;
-    font-size: 50px;
     cursor: pointer;
     border-radius: 15px 50px;
 
     
 }
-#cellContainer{
+#helmetsContainer{
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 225px;
@@ -20,9 +19,15 @@
     color: brown;
     text-align: center;
 }
-.cell img{
+.helmet img{
     width: 100%;
    
+}
+h2{
+    color: red;
+    background-color: blue;
+    font-size: 2.5em;
+    
 }
 
 /* #gameContainer{

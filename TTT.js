@@ -1,14 +1,30 @@
+//Sources: https://www.codebrainer.com/blog/tic-tac-toe-javascript-game
+//
+
 const canvas = document.getElementById("board");
+const ctx = canvas.getContext("2D");
+
+const GiantsObjects = document.createElement("img");
+GiantsObjects.src = "assets/GiantsHelmet.png";
+const GiantsArray = new Array(5);
+for(var i =0; i < 5; i++){
 const Giants = document.createElement("img");
 Giants.src = "assets/GiantsHelmet.png";
+GiantsArray[i]= Giants}
+
+//let clonedGiants = Giants.cloneNode(true);
+const PatriotsObjects = document.createElement("img");
+PatriotsObjects.src = "assets/PatriotsHelmet.png";
+const PatriotsArray = new Array(5);
+for(var i=0; i < 5; i++){
 const Patriots = document.createElement("img");
-Patriots.src = "assets/PatriotsHelmet.png";
-const ctx = canvas.getContext("2D");
-const tac = document.getElementById("cellContainer");
-const cells = document.querySelectorAll(".cell");
-const statusText = document.querySelector("#statusText");
+Patriots.src= "assets/PatriotsHelmet.png"
+PatriotsArray[i]=Patriots}
+
+const helmets = document.querySelectorAll(".helmet");
+const statusText = document.getElementById("statusText");
 const restartBtn = document.querySelector("#restartBtn");
-const winConditions = [
+const winCombinations = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -19,55 +35,67 @@ const winConditions = [
     [2, 4, 6]
 ];
 let options = ["", "", "", "", "", "", "", "", ""];
-let currentPlayer = Patriots;
+let GiantsIndex = 0;
+let PatriotsIndex = 0;
+let currentPlayer = GiantsArray[GiantsIndex];
 let running = false;
 
-initializeGame();
+initGame();
 
-function initializeGame(){
-    cells.forEach(cell => cell.addEventListener("click", cellClicked));
+function initGame(){
+    helmets.forEach(helmet => helmet.addEventListener("click", helmetClicked));
     restartBtn.addEventListener("click", restartGame);
-    statusText.textContent = `${currentPlayer}'s turn`;
+    //statusText.textContent = `${currentPlayer}'s turn`;
     running = true;
 }
-function cellClicked(){
+function helmetClicked(){
     const cellIndex = this.getAttribute("cellIndex");
 
     if(options[cellIndex] != "" || !running){
         return;
     }
 
-    updateCell(this, cellIndex);
+    updateHelmet(this, cellIndex);
     checkWinner();
 }
-function updateCell(cell, index){
+function updateHelmet(helmet, index){
     options[index] = currentPlayer;
-    cell.appendChild(currentPlayer);
+    helmet.appendChild(currentPlayer);
 }
 function changePlayer(){
-    currentPlayer = currentPlayer == Giants ? Patriots : Giants; 
-    statusText.textContent = `${currentPlayer}'s turn`;
+    console.log(currentPlayer, GiantsArray[GiantsIndex]);
+    if (currentPlayer == GiantsArray[GiantsIndex]){
+        currentPlayer = PatriotsArray[PatriotsIndex]
+        statusText.textContent = `Patriots Turn!`
+        GiantsIndex ++}
+    else{
+        currentPlayer = GiantsArray[GiantsIndex]
+        statusText.textContent = `Giants Turn!`
+        PatriotsIndex++
+    }
+    console.log(PatriotsIndex, GiantsIndex, currentPlayer);
+    //statusText.textContent = `${currentPlayer}'s turn`;
 }
 function checkWinner(){
     let roundWon = false;
 
-    for(let i = 0; i < winConditions.length; i++){
-        const condition = winConditions[i];
-        const cellA = options[condition[0]];
-        const cellB = options[condition[1]];
-        const cellC = options[condition[2]];
+    for(let i = 0; i < winCombinations.length; i++){
+        const combination = winCombinations[i];
+        const helmetA = options[combination[0]];
+        const helmetB = options[combination[1]];
+        const helmetC = options[combination[2]];
 
-        if(cellA == "" || cellB == "" || cellC == ""){
+        if(helmetA == "" || helmetB == "" || helmetC == ""){
             continue;
         }
-        if(cellA == cellB && cellB == cellC){
+        if(helmetA == helmetB && helmetB == helmetC){
             roundWon = true;
             break;
         }
     }
 
     if(roundWon){
-        statusText.textContent = `${currentPlayer} wins!`;
+        //statusText.textContent = `${currentPlayer} wins!`;
         running = false;
     }
     else if(!options.includes("")){
@@ -81,8 +109,8 @@ function checkWinner(){
 function restartGame(){
     currentPlayer = Giants;
     options = ["", "", "", "", "", "", "", "", ""];
-    statusText.textContent = `${currentPlayer}'s turn`;
-    cells.forEach(cell => cell.textContent = "");
+    //statusText.textContent = `${currentPlayer}'s turn`;
+    helmets.forEach(helmet => helmet.textContent = "");
     running = true;
 }
 
