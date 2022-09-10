@@ -19,7 +19,7 @@ const winConditions = [
     [2, 4, 6]
 ];
 let options = ["", "", "", "", "", "", "", "", ""];
-let currentPlayer = Giants;
+let currentPlayer = Patriots;
 let running = false;
 
 initializeGame();
@@ -42,10 +42,10 @@ function cellClicked(){
 }
 function updateCell(cell, index){
     options[index] = currentPlayer;
-    cell.appendChild(Giants);
+    cell.appendChild(currentPlayer);
 }
 function changePlayer(){
-    currentPlayer = currentPlayer == "Giants" ? "Patriots" : "Giants"; 
+    currentPlayer = currentPlayer == Giants ? Patriots : Giants; 
     statusText.textContent = `${currentPlayer}'s turn`;
 }
 function checkWinner(){
@@ -79,7 +79,7 @@ function checkWinner(){
     }
 }
 function restartGame(){
-    currentPlayer = "Giants";
+    currentPlayer = Giants;
     options = ["", "", "", "", "", "", "", "", ""];
     statusText.textContent = `${currentPlayer}'s turn`;
     cells.forEach(cell => cell.textContent = "");
