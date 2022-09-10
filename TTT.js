@@ -1,4 +1,8 @@
 const canvas = document.getElementById("board");
+const Giants = document.createElement("img");
+Giants.src = "assets/GiantsHelmet.png";
+const Patriots = document.createElement("img");
+Patriots.src = "assets/PatriotsHelmet.png";
 const ctx = canvas.getContext("2D");
 const tac = document.getElementById("cellContainer");
 const cells = document.querySelectorAll(".cell");
@@ -15,7 +19,7 @@ const winConditions = [
     [2, 4, 6]
 ];
 let options = ["", "", "", "", "", "", "", "", ""];
-let currentPlayer = "G";
+let currentPlayer = ("cell");
 let running = false;
 
 initializeGame();
@@ -38,10 +42,10 @@ function cellClicked(){
 }
 function updateCell(cell, index){
     options[index] = currentPlayer;
-    cell.textContent = currentPlayer;
+    cell.appendChild(Giants);
 }
 function changePlayer(){
-    currentPlayer = currentPlayer == "G" ? "P" : "G"; 
+    currentPlayer = currentPlayer == "Giants" ? "Patriots" : "Giants"; 
     statusText.textContent = `${currentPlayer}'s turn`;
 }
 function checkWinner(){
@@ -75,7 +79,7 @@ function checkWinner(){
     }
 }
 function restartGame(){
-    currentPlayer = "G";
+    currentPlayer = "Giants";
     options = ["", "", "", "", "", "", "", "", ""];
     statusText.textContent = `${currentPlayer}'s turn`;
     cells.forEach(cell => cell.textContent = "");

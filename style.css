@@ -20,6 +20,12 @@
     color: brown;
     text-align: center;
 }
+.cell img{
+    width: 100%;
+    
+  
+    
+}
 /* #gameContainer{
     font-family: "Permanent Marker", cursive;
     text-align: center;
